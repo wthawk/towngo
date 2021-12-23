@@ -1,0 +1,24 @@
+mixin card(name, image)
+    .card
+        a.card__image-holder(href="#" style=`background-image: url(assets/images/${image})`)
+            img.card__image(width="120" height="180" src="assets/images/" + image)
+        .card__info
+            .card__rate 9.2
+            .card__age 16+
+            button.card__favorite-btn(type="button")
+                svg.card__favorite-icon
+                    use(xlink:href="assets/images/sprite.svg#favorite")
+            .card__genre Комедия, DramaPlays
+            a.card__name(href="#")= name
+            a.card__btn(href="#") Расписание и билеты
+.cards-list
+    if CardImages2
+        +card('Иисус Христос — суперзвезда', 'image5.png')
+        +card('Иисус Христос — суперзвезда', 'image6.png')
+        +card('Иисус Христос — суперзвезда', 'image7.png')
+        +card('Иисус Христос — суперзвезда', 'image8.png')
+    else
+        +card('Иисус Христос — суперзвезда', 'image1.png')
+        +card('Иисус Христос — суперзвезда', 'image2.png')
+        +card('Иисус Христос — суперзвезда', 'image3.png')
+        +card('Иисус Христос — суперзвезда', 'image4.png')

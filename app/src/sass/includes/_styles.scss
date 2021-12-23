@@ -1,0 +1,236 @@
+@charset "UTF-8";
+* {
+	box-sizing: border-box;
+	&:before {
+		box-sizing: border-box
+	}
+}
+body {
+	background: #F5F6F8;
+	color: $color-text;
+	font-family: $font-main;
+}
+h1 {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 140%;
+	margin-bottom: 16px;
+}
+.wrapper {
+	width: 100%;
+	max-width: $wrapper;
+	margin: 0 auto;
+}
+.content {
+	padding: 80px 0;
+}
+.tabs {
+	display: flex;
+	&__item {
+		&:not(:first-child) {
+			margin-left: 4px;
+		}
+		&.state-active {
+			.tabs__link {
+				background-color: $color-text;
+				color: white;
+				.tabs__link-icon {
+					fill: white;
+				}
+			}
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		background: white;
+		padding: 12px 17px;
+		border-radius: 50px;
+		color: $color-text-muted;
+		font-weight: 500;
+		font-size: $font-14;
+		text-decoration: none;
+		transition: .2s color, .2s background-color;
+		&:hover {
+			background-color: $color-text;
+			color: white;
+			.tabs__link-icon {
+				fill: white;
+			}
+		}
+	}
+	&__link-count {
+		color: $color-text-light;
+		font-size: $font-12;
+		margin-left: 4px;
+		font-weight: 400;
+	}
+	&__link-icon {
+		width: 24px;
+		height: 24px;
+		fill: $color-text-muted;
+		margin-right: 4px;
+	}
+}
+.top-panel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+	.select2-container {
+		width: 132px !important;
+	}
+}
+.cards-list {
+	display: flex;
+	margin: 0 -16px;
+}
+.card {
+	background: white;
+	overflow: hidden;
+	border-radius: 20px 20px 0 0;
+	&__image-holder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 256px;
+		background-size: cover;
+		position: relative;
+		border-radius: 26px 26px 0 0;
+		overflow: hidden;
+		&:before {
+			background: white;
+			opacity: 0.8;
+			content: '';
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			backdrop-filter: blur(60px);
+		}
+	}
+	&__image {
+		width: auto !important;
+		height: auto !important;
+		position: relative;
+		z-index: 3;
+		box-shadow: 0px 24px 58px rgba(41, 45, 54, 0.34);
+	}
+	&__info {
+		position: relative;
+		z-index: 5;
+		padding: 32px 16px 16px 16px;
+	}
+	&__rate {
+		width: 37px;
+		height: 40px;
+		box-shadow: 0 17px 56px rgba(41, 45, 54, 0.08);
+		background: $color-primary;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-weight: 500;
+		font-size: $font-14;
+		border-radius: 8px;
+		position: absolute;
+		z-index: 2;
+		left: 16px;
+		top: -20px;
+	}
+	&__age {
+		width: 40px;
+		height: 40px;
+		box-shadow: 0 17px 56px rgba(41, 45, 54, 0.08);
+		background: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $color-text-muted;
+		font-weight: 500;
+		font-size: $font-14;
+		border-radius: 8px;
+		position: absolute;
+		z-index: 2;
+		left: 57px;
+		top: -20px;
+	}
+	&__favorite-btn {
+		width: 40px;
+		height: 40px;
+		box-shadow: 0 17px 56px rgba(41, 45, 54, 0.08);
+		background: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		z-index: 2;
+		border-radius: 50%;
+		right: 16px;
+		top: -20px;
+		border: none;
+		cursor: pointer;
+		&:hover {
+			.card__favorite-icon {
+				fill: #ff1c5c;
+			}
+		}
+	}
+	&__favorite-icon {
+		fill: $color-text-muted;
+		width: 24px;
+		height: 24px;
+		transition: .2s fill;
+	}
+	&__genre {
+		color: $color-text-muted;
+		font-size: $font-12;
+		line-height: 140%;
+		margin-bottom: 12px;
+	}
+	&__name {
+		font-weight: 500;
+		font-size: $font-18;
+		line-height: 140%;
+		color: $color-text;
+		text-decoration: none;
+		transition: .2s color;
+		display: inline-block;
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	&__btn {
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #D9DBDF;
+		border-radius: 60px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 140%;
+		color: $color-primary;
+		text-decoration: none;
+		transition: .2s color, .2s border-color, .2s background-color;
+		margin-top: 12px;
+		&:hover {
+			border-color: $color-primary;
+			background-color: $color-primary;
+			color: white;
+		}
+	}
+	.cards-list & {
+		width: calc(25% - 32px);
+		margin-left: 16px;
+		margin-right: 16px;
+	}
+}

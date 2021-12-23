@@ -1,0 +1,26 @@
+extends common/layout
+
+block content
+    .wrapper
+        .content
+            h1 Афиша в Москве
+            .js-tabs-container.tabs-holder
+                .top-panel
+                    .top-panel__left
+                        include includes/tabs_buttons.pug
+                    .top-panel__right
+                        include includes/sort_select.pug
+                .js-tab-panel.js-tab-panel-movie.tabs-panel
+                    include includes/cards.pug
+                .js-tab-panel.js-tab-panel-music.tabs-panel
+                    - var CardImages2 = true
+                    include includes/cards.pug
+                .js-tab-panel.js-tab-panel-events.tabs-panel
+                    - var CardImages2 = false
+                    include includes/cards.pug
+                .js-tab-panel.js-tab-panel-theatre.tabs-panel
+                    - var CardImages2 = true
+                    include includes/cards.pug
+                .js-tab-panel.js-tab-panel-sport.tabs-panel
+                    - var CardImages2 = false
+                    include includes/cards.pug

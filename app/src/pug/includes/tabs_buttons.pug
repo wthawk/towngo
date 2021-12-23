@@ -1,0 +1,17 @@
+mixin tabButton(name, icon, count, anchor)
+    a.tabs__link(href="#" data-filter="" + anchor)
+        svg.tabs__link-icon
+            use(xlink:href="assets/images/sprite.svg#" + icon)
+        span.tabs__link-name= name
+        span.tabs__link-count= count
+ul.js-tabs.tabs
+    li.tabs__item
+        +tabButton('Кино', 'pop-corn', '16', '.js-tab-panel-movie')
+    li.tabs__item
+        +tabButton('Концерты', 'microphone', '23', '.js-tab-panel-music')
+    li.tabs__item
+        +tabButton('События', 'calendar', '158', '.js-tab-panel-events')
+    li.tabs__item
+        +tabButton('Спектаки', 'theatre', '18', '.js-tab-panel-theatre')
+    li.tabs__item
+        +tabButton('Спорт', 'ball', '48', '.js-tab-panel-sport')
